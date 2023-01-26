@@ -6,12 +6,13 @@ const App = () => {
     return (
         <div>
           <div>one div</div>
+                <p>Lorem ipsum dolor sit amet.</p>
             <div className="App">
                 <ul>
                     <li>css</li>
                     <li>html</li>
-                    <li>js</li>
-                    <li>react</li>                    A
+                    <li>react</li>
+                    <li>react2</li>
                 </ul>
             </div>
         </div>
