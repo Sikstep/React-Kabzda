@@ -14,14 +14,17 @@ const App = () => {
     // обязательно вернуть JSX
     return (
         <div>
-            I love you
-            <Rating/>
+            <AppTitle/>
             <Rating/>
             <Accordion/>
+            <Rating/>
         </div>
     );
 }
 
+function AppTitle () {
+    return <>This is APP component</>
+}
 function Rating() {
 
     return (
