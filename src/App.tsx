@@ -10,7 +10,7 @@ function hello() {
 
 const App = () => {
     // полезное что - то
-
+    console.log('App rendering');
     // обязательно вернуть JSX
     return (
         <div>
@@ -22,26 +22,42 @@ const App = () => {
     );
 }
 
-function AppTitle () {
+function AppTitle() {
+    console.log('AppTitle rendering');
     return <>This is APP component</>
 }
-function Rating() {
 
+function Rating() {
+    console.log('Rating rendering');
     return (
-        <div>
+        <>
             <Star/>
             <Star/>
             <Star/>
             <Star/>
             <Star/>
-        </div>
+        </>
     )
 }
 
 function Accordion() {
+    console.log('Accordion rendering');
+    return <div>
+        <AccordionTitle/>
+        <AccordionBody/>
+    </div>
+}
 
+function AccordionTitle() {
+    console.log('AccordionTitle rendering');
     return <div>
         <h3>Меню</h3>
+    </div>
+}
+
+function AccordionBody() {
+    console.log('AccordionBody rendering');
+    return <div>
         <ul>
             <li>1</li>
             <li>2</li>
@@ -50,7 +66,8 @@ function Accordion() {
     </div>
 }
 
-function Star ()  {
+function Star() {
+    console.log('Star rendering');
     return <div>Star</div>
 }
 
