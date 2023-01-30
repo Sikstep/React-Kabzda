@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion";
-
+import {Rating} from "./components/Rating/Rating";
 
 
 const App = () => {
@@ -10,35 +10,27 @@ const App = () => {
     // обязательно вернуть JSX
     return (
         <div>
-            <AppTitle/>
-            <Rating/>
-            <Accordion/>
-            <Rating/>
+            <PageTitle title={"This is APP component"}/>
+            <PageTitle title={"My friends"}/>
+            Article 1
+            <Rating value={3}/>
+            <Accordion title={'Menu'} body={[1, 2, 3]}/>
+            <Accordion title={'Meny'} body={[1, 2, 3]}/>
+            Article 2
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
     );
 }
 
-function AppTitle() {
-    console.log('AppTitle rendering');
-    return <>This is APP component</>
-}
+function PageTitle(props: any) {
 
-function Rating() {
-    console.log('Rating rendering');
-    return (
-        <>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </>
-    )
-}
-
-function Star() {
-    console.log('Star rendering');
-    return <div>Star</div>
+    console.log('PageTitle rendering');
+    return <h1>{ props.title }</h1>
 }
 
 export default App;
