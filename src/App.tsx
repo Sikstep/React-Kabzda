@@ -4,19 +4,19 @@ import Accordion from "./components/Accordion";
 import {Rating} from "./components/Rating/Rating";
 
 
-const App = () => {
+const App = (props: any) => {
     // полезное что - то
     console.log('App rendering');
     // обязательно вернуть JSX
     return (
         <div>
-            <PageTitle title={"This is APP component"}/>
-            <PageTitle title={"My friends"}/>
+            <PageTitle title={'This is APP component'}/>
+            <PageTitle title={'My friends'}/>
             Article 1
             <Rating value={3}/>
-            <Accordion title={'Menu'} body={[1, 2, 3]}/>
-            <Accordion title={'Meny'} body={[1, 2, 3]}/>
-            Article 2
+            <Accordion titleValue={'Menu'} body={[1, 2, 3]} collapsed={true}/>
+            <Accordion titleValue={'Users'} body={[1, 2, 3]} collapsed={false}/>
+
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
@@ -27,10 +27,14 @@ const App = () => {
     );
 }
 
-function PageTitle(props: any) {
+
+function PageTitle(props: PageTitlePropsType) {
 
     console.log('PageTitle rendering');
     return <h1>{ props.title }</h1>
 }
 
+type PageTitlePropsType = {
+    title: string
+}
 export default App;
