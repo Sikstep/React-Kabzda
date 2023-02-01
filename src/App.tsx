@@ -1,16 +1,21 @@
 import React from 'react';
 import './App.css';
-import Accordion from "./components/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import Accordion from './components/Accordion';
+import {Rating} from './components/Rating/Rating';
+import {Button} from './components/Button';
 
 
 const App = (props: any) => {
     // полезное что - то
-    console.log('App rendering');
+
+    const sayLog = () => {
+        return console.log('Click')
+    }
+
     // обязательно вернуть JSX
     return (
         <div>
-            <PageTitle title={'This is APP component'}/>
+            <PageTitle title={'ВЛАДИК МОЙ ЛЮБИМЫЙ СЫНУЛИК!!!'}/>
             <PageTitle title={'My friends'}/>
             Article 1
             <Rating value={3}/>
@@ -23,6 +28,7 @@ const App = (props: any) => {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
+            <Button name={'My univers Buttom'} callBack={sayLog}/>
         </div>
     );
 }
