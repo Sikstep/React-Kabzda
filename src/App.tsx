@@ -5,11 +5,15 @@ import {Rating} from './components/Rating/Rating';
 import {Button} from './components/Button';
 
 
-const App = (props: any) => {
+const App = () => {
     // полезное что - то
 
     const sayLog = () => {
         return console.log('Click')
+    }
+
+    const foo1 = (name: string, age: number, address: string) => {
+        return console.log(name, age, address)
     }
 
     // обязательно вернуть JSX
@@ -29,6 +33,7 @@ const App = (props: any) => {
             <Rating value={4}/>
             <Rating value={5}/>
             <Button name={'My univers Buttom'} callBack={sayLog}/>
+            <Button name={'Buttom foo1'} callBack={() => foo1('Kosty', 93, 'Live in Minsk')}/>
         </div>
     );
 }
