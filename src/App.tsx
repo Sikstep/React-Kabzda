@@ -1,35 +1,43 @@
 import React, {useState} from 'react';
 import classes from './App.module.css';
 import {Fullinput} from './components/Fullinput';
+import {Button} from './components/Button';
+import {Input} from './components/Input';
 
-type MainMessage = {
-    message: string
-}
 
 const App = () => {
     // полезное что - то
-    let [message, setMessage] = useState<Array<MainMessage>>([
+    let [message, setMessage] = useState([
         {message: 'message1'},
         {message: 'message2'},
         {message: 'message3'},
     ]);
 
+    const [msg, setMsg] = useState('');
+
+
     const addMessage = (title: string) => {
-        let newMessage = {message: title};
+        const newMessage = {message: title};
         setMessage([newMessage, ...message])
     }
 
+    const newMessageAdd = () => {
+        addMessage(msg);
+        setMsg('');
+    }
 
     return (
         <div className={classes.App}>
-            <Fullinput addMessage={addMessage}/>
+            {/*<Fullinput buttomName={'+'} buttomClick={addMessage}/>*/}
+            <Input msg={msg} setMsg={setMsg}/>
+            <Button name={'+'} callBack={newMessageAdd}/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
                 )
             })}
         </div>
-);
+    );
 }
 
 export default App;
