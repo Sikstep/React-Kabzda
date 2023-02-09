@@ -4,6 +4,7 @@ import {Fullinput} from './components/Fullinput';
 import {Button} from './components/Button';
 import {Input} from './components/Input';
 import Accordion from './components/Accordion';
+import {Rating} from './components/Rating/Rating';
 
 
 const App = () => {
@@ -38,8 +39,15 @@ const App = () => {
             {/*        <div key={index}>{el.message}</div>*/}
             {/*    )*/}
             {/*})}*/}
-            <Accordion titleValue={'--Menu--'} collapsed={true}/>
-            <Accordion titleValue={'--Users--'} collapsed={true}/>
+            {/*<Accordion titleValue={'--Menu--'} collapsed={true}/>*/}
+            {/*<Accordion titleValue={'--Users--'} collapsed={true}/>*/}
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
+
         </div>
     );
 }
