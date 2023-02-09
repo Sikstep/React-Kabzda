@@ -38,8 +38,8 @@ const App = () => {
             {/*        <div key={index}>{el.message}</div>*/}
             {/*    )*/}
             {/*})}*/}
-            <Accordion titleValue={'--Menu--'} body={arrForAccordion} collapsed={false}/>
-            <Accordion titleValue={'--Users--'} body={arrForAccordion} collapsed={false}/>
+            <Accordion titleValue={'--Menu--'} collapsed={true}/>
+            <Accordion titleValue={'--Users--'} collapsed={true}/>
         </div>
     );
 }
