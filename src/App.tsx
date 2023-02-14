@@ -3,9 +3,11 @@ import classes from './App.module.css';
 import {Fullinput} from './components/Fullinput';
 import {Button} from './components/Button';
 import {Input} from './components/Input';
-import Accordion from './components/Accordion';
+import Accordion from './components/Accordion/Accordion';
 import {Rating} from './components/Rating/Rating';
 import { OnOffButton } from './components/OnOff/OnOff';
+import {UncontrelledAccordion} from './components/Accordion/UncontrolledAccordion';
+
 
 
 const App = () => {
@@ -48,7 +50,14 @@ const App = () => {
             {/*<Rating value={3}/>*/}
             {/*<Rating value={4}/>*/}
             {/*<Rating value={5}/>*/}
-            <OnOffButton value={true}/>
+            <OnOffButton />
+            <OnOffButton />
+            <OnOffButton />
+            <OnOffButton />
+            {/*<OnOffButton />*/}
+            {/*<OnOffButton />*/}
+            <UncontrelledAccordion titleValue={'Menu'}/>
+
         </div>
     );
 }
