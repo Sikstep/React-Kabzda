@@ -44,7 +44,12 @@ const App = () => {
             {/*})}*/}
             {/*<Accordion titleValue={'--Menu--'} collapsed={true}/>*/}
             {/*<Accordion titleValue={'--Users--'} collapsed={true}/>*/}
-            {/*<Rating value={0}/>*/}
+            <Rating />
+            {/*<Rating />*/}
+            {/*<Rating />*/}
+            {/*<Rating />*/}
+            {/*<Rating />*/}
+            {/*<Rating />*/}
             {/*<Rating value={1}/>*/}
             {/*<Rating value={2}/>*/}
             {/*<Rating value={3}/>*/}

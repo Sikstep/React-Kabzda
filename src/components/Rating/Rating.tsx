@@ -1,18 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 type RatingPropsType = {
-    value: 0 | 1 | 2 | 3 | 4 | 5
+    value?: 0 | 1 | 2 | 3 | 4 | 5
 }
 
 export function Rating(props: RatingPropsType) {
 
+    const [starsRender, setStarsRender] = useState<number>(0);
+
     return (
         <div>
-            <Star selected={ props.value > 0 }/>
-            <Star selected={ props.value > 1 }/>
-            <Star selected={ props.value > 2 }/>
-            <Star selected={ props.value > 3 }/>
-            <Star selected={ props.value > 4 }/>
+            <button onClick={ () => {setStarsRender(0)} }>Reset</button>
+            <Star selected={ starsRender > 0 }/><button onClick={ () => {setStarsRender(1)} }>1</button>
+            <Star selected={ starsRender > 1 }/><button onClick={ () => {setStarsRender(2)} }>2</button>
+            <Star selected={ starsRender > 2 }/><button onClick={ () => {setStarsRender(3)} }>3</button>
+            <Star selected={ starsRender > 3 }/><button onClick={ () => {setStarsRender(4)} }>4</button>
+            <Star selected={ starsRender > 4 }/><button onClick={ () => {setStarsRender(5)} }>5</button>
         </div>
     );
 };
