@@ -5,6 +5,7 @@ import {UncontrelledAccordion} from './components/Accordion/UncontrolledAccordio
 import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 import Accordion from './components/Accordion/Accordion';
 import {UncontrolledOnOffButton} from './components/OnOff/UncontrolledOnOff';
+import {OnOffButton} from './components/OnOff/OnOff';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
     const [msg, setMsg] = useState('');
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     const [accordion, setAccordion] = useState(true);
+    const [onOff, setOnOff] = useState(true);
     const addMessage = (title: string) => {
         const newMessage = {message: title};
         setMessage([newMessage, ...message])
@@ -34,10 +36,9 @@ const App = () => {
 
             <Accordion titleValue={'--Users--'} collapsed={accordion} setAcc={setAccordion}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UncontrolledRating />
-
+            <OnOffButton value={onOff} setValue={setOnOff}/>
+            <UncontrolledRating/>
             <UncontrolledOnOffButton/>
-
             <UncontrelledAccordion titleValue={'Menu'}/>
 
         </div>
