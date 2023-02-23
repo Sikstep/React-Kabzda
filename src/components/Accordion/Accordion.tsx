@@ -20,10 +20,10 @@ function AccordionTitle (props:AccordionPropsType) {
     return <h3 onClick={() => props.setAcc(!props.collapsed) }>{props.titleValue}</h3>
 }
 
-type AccordionBodyPropsType = {
-    body: Array<number>,
-    collapsed: boolean
-}
+// type AccordionBodyPropsType = {
+//     body: Array<number>,
+//     collapsed: boolean
+// }
 
 function AccordionBody() {
     return (

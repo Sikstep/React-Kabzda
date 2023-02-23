@@ -1,19 +1,15 @@
 import React, {useState} from 'react';
 //
-// type OnOffType = {
-//     value?: boolean
-// }
+type UncontrolledOnOffType = {
+    callBack: (value: boolean) => void
+}
 // type ButtonType = {
 //     title: string
 //     selected: boolean
 // }
 
-export const UncontrolledOnOffButton = () => {
-const [buttonValue, setButtonValue] = useState<boolean>(false);
-
-
-
-
+export const UncontrolledOnOffButton = (props: UncontrolledOnOffType) => {
+    const [buttonValue, setButtonValue] = useState<boolean>(false);
 
     const onStyle = {
         width: '30px',
@@ -41,13 +37,23 @@ const [buttonValue, setButtonValue] = useState<boolean>(false);
         marginLeft: '5px',
         backgroundColor: buttonValue ? 'green' : 'red',
     };
+    const changeValueForOn = () => {
+        setButtonValue(true)
+        props.callBack(true)
+    }
 
+    const changeValueForOff = () => {
+        setButtonValue(false)
+        props.callBack(false)
+    }
 
     return (
         <div>
-            <div style={onStyle} onClick={ () => setButtonValue(true)}>On</div>
+            <div style={onStyle} onClick={changeValueForOn}>On
+            </div>
 
-            <div style={offStyle} onClick={ () => setButtonValue(false)}>Off</div>
+            <div style={offStyle} onClick={changeValueForOff}>Off
+            </div>
             <div style={indicatorStyle}></div>
             {/*<Button title={'ON'} selected={props.value}/>*/}
             {/*<Button title={'OFF'} selected={!props.value}/>*/}

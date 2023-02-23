@@ -31,14 +31,16 @@ const App = () => {
         setMsg('');
     }
 
+
     return (
         <div className={classes.App}>
 
             <Accordion titleValue={'--Users--'} collapsed={accordion} setAcc={setAccordion}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <OnOffButton value={onOff} setValue={setOnOff}/>
+            {/*<OnOffButton value={onOff} setValue={setOnOff}/>*/}
             <UncontrolledRating/>
-            <UncontrolledOnOffButton/>
+            <UncontrolledOnOffButton callBack={setOnOff}/> {String(onOff)}
+
             <UncontrelledAccordion titleValue={'Menu'}/>
 
         </div>
