@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import classes from './App.module.css';
-import {Rating} from './components/Rating/Rating';
+import {Rating, RatingValueType} from './components/Rating/Rating';
 import {OnOffButton} from './components/OnOff/OnOff';
 import {UncontrelledAccordion} from './components/Accordion/UncontrolledAccordion';
+import {UncontrolledRating} from './components/Rating/UncontrolledRating';
+import Accordion from './components/Accordion/Accordion';
 
 
 const App = () => {
@@ -12,11 +14,11 @@ const App = () => {
         {message: 'message2'},
         {message: 'message3'},
     ]);
-    let arrForAccordion = [1, 2, 3];
+
 
     const [msg, setMsg] = useState('');
-
-
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+    const [accordion, setAccordion] = useState(true);
     const addMessage = (title: string) => {
         const newMessage = {message: title};
         setMessage([newMessage, ...message])
@@ -30,8 +32,9 @@ const App = () => {
     return (
         <div className={classes.App}>
 
-            {/*<Accordion titleValue={'--Users--'} collapsed={true}/>*/}
-            <Rating/>
+            <Accordion titleValue={'--Users--'} collapsed={accordion} setAcc={setAccordion}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <UncontrolledRating />
 
             <OnOffButton/>
 
