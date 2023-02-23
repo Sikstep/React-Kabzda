@@ -1,15 +1,14 @@
-import s from './OnOff.module.css'
 import React, {useState} from 'react';
+//
+// type OnOffType = {
+//     value?: boolean
+// }
+// type ButtonType = {
+//     title: string
+//     selected: boolean
+// }
 
-type OnOffType = {
-    value?: boolean
-}
-type ButtonType = {
-    title: string
-    selected: boolean
-}
-
-export const UncontrolledOnOffButton = (props: OnOffType) => {
+export const UncontrolledOnOffButton = () => {
 const [buttonValue, setButtonValue] = useState<boolean>(false);
 
 
@@ -57,12 +56,12 @@ const [buttonValue, setButtonValue] = useState<boolean>(false);
     )
 }
 
-export const Button = (props: ButtonType) => {
-
-    if (props.selected) {
-        return <button className={s.onButton}>{props.title}</button>;
-    } else {
-        return <button className={s.offButton}>{props.title}</button>;
-    }
-    ;
-};
+// export const Button = (props: ButtonType) => {
+//
+//     if (props.selected) {
+//         return <button className={s.onButton}>{props.title}</button>;
+//     } else {
+//         return <button className={s.offButton}>{props.title}</button>;
+//     }
+//     ;
+// };
