@@ -9,7 +9,7 @@ type ButtonType = {
     selected: boolean
 }
 
-export const OnOffButton = (props: OnOffType) => {
+export const UncontrolledOnOffButton = (props: OnOffType) => {
 const [buttonValue, setButtonValue] = useState<boolean>(false);
 
 

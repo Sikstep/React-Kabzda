@@ -7,21 +7,17 @@ type AccordionPropsType = {
     setAcc: (accordion: boolean) => void
 }
 
-function Accordion(props: AccordionPropsType) {
+function Accordion({titleValue, collapsed, setAcc}: AccordionPropsType) {
 
     return <div>
-        <AccordionTitle title={props.titleValue} />
-        { props.collapsed && <AccordionBody/> }
+        <AccordionTitle titleValue={titleValue} collapsed={collapsed} setAcc={setAcc}/>
+        { collapsed && <AccordionBody/> }
     </div>
 }
 
-type AccordionTitlePropsType = {
-    title: string
-}
+function AccordionTitle (props:AccordionPropsType) {
 
-function AccordionTitle(props: AccordionTitlePropsType) {
-
-    return <h3 >{props.title}</h3>
+    return <h3 onClick={() => props.setAcc(!props.collapsed) }>{props.titleValue}</h3>
 }
 
 type AccordionBodyPropsType = {

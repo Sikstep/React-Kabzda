@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import classes from './App.module.css';
 import {Rating, RatingValueType} from './components/Rating/Rating';
-import {OnOffButton} from './components/OnOff/OnOff';
 import {UncontrelledAccordion} from './components/Accordion/UncontrolledAccordion';
 import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 import Accordion from './components/Accordion/Accordion';
+import {UncontrolledOnOffButton} from './components/OnOff/UncontrolledOnOff';
 
 
 const App = () => {
@@ -36,7 +36,7 @@ const App = () => {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating />
 
-            <OnOffButton/>
+            <UncontrolledOnOffButton/>
 
             <UncontrelledAccordion titleValue={'Menu'}/>
 
