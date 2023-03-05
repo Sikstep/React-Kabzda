@@ -5,7 +5,6 @@ import {UncontrelledAccordion} from './components/Accordion/UncontrolledAccordio
 import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 import Accordion from './components/Accordion/Accordion';
 import {UncontrolledOnOffButton} from './components/OnOff/UncontrolledOnOff';
-import {OnOffButton} from './components/OnOff/OnOff';
 
 
 const App = () => {
@@ -37,10 +36,8 @@ const App = () => {
 
             <Accordion titleValue={'--Users--'} collapsed={accordion} setAcc={setAccordion}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            {/*<OnOffButton value={onOff} setValue={setOnOff}/>*/}
             <UncontrolledRating/>
             <UncontrolledOnOffButton callBack={setOnOff}/> {String(onOff)}
-
             <UncontrelledAccordion titleValue={'Menu'}/>
 
         </div>
