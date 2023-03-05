@@ -7,11 +7,11 @@ export default {
   component: Accordion,
 }
 
-const callBack = action('on or off clicked')
-export const shouldBeAccordion = () => <Accordion titleValue={'Accordion'} collapsed={true} setAcc={callBack}/>;
-export const shouldBeNotAccordion = () => <Accordion titleValue={'No Accordion'} collapsed={false} setAcc={callBack}/>;
+const callBack = action('accordion mode change event fired')
+export const CollapsedMode = () => <Accordion titleValue={'Menu'} collapsed={true} setAcc={callBack}/>;
+export const UnCollapsedMode = () => <Accordion titleValue={'Users'} collapsed={false} setAcc={callBack}/>;
 export const AccordionChanged = () => {
-  const [acc, setAcc] = useState(true);
+  const [acc, setAcc] = useState<boolean>(true);
   return <Accordion titleValue={'Accordion Changer'} collapsed={acc} setAcc={setAcc}/>
 };
 

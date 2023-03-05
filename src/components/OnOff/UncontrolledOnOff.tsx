@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 //
 type UncontrolledOnOffType = {
     callBack: (value: boolean) => void
+    dafaultOn?: boolean
 }
 // type ButtonType = {
 //     title: string
@@ -9,7 +10,7 @@ type UncontrolledOnOffType = {
 // }
 
 export const UncontrolledOnOffButton = (props: UncontrolledOnOffType) => {
-    const [buttonValue, setButtonValue] = useState<boolean>(false);
+    const [buttonValue, setButtonValue] = useState<boolean>(props.dafaultOn ? props.dafaultOn : false);
 
     const onStyle = {
         width: '30px',

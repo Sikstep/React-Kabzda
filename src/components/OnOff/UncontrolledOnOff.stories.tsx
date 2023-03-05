@@ -7,4 +7,7 @@ export default {
   component: UncontrolledOnOffButton,
 }
 
-export const unControlledOnOFF = () => <UncontrolledOnOffButton callBack={action('on or off clicked')}/>;
+export const OnMode = () => <UncontrolledOnOffButton callBack={action('clickOn or Off')} dafaultOn={true}/>;
+export const OffMode = () => <UncontrolledOnOffButton callBack={action('clickOn or Off')} dafaultOn={false}/>;
+// export const BugMode = () => <div>Unsync when change defaultValue when already rendered</div>;
+export const DefaultInputValue = () => <input defaultValue={'Yo'} />;

@@ -17,7 +17,7 @@ function Accordion({titleValue, collapsed, setAcc}: AccordionPropsType) {
 
 function AccordionTitle (props:AccordionPropsType) {
 
-    return <h3 onClick={() => props.setAcc(!props.collapsed) }>{props.titleValue}</h3>
+    return <h3 onClick={(event) => props.setAcc(!props.collapsed) }>{props.titleValue}</h3>
 }
 
 // type AccordionBodyPropsType = {

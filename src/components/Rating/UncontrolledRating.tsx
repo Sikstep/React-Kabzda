@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-import {RatingPropsType, RatingValueType} from './Rating';
+import React, {useState} from 'react';
+import {RatingValueType} from './Rating';
 
+type UncontrolledRatingType = {
+    defaultValue?: RatingValueType
+}
 export function UncontrolledRating () {
 const [value, setValue] = useState(0);
 

@@ -37,8 +37,8 @@ const App = () => {
 
             <Accordion titleValue={'--Users--'} collapsed={accordion} setAcc={setAccordion}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UncontrolledRating/>
-            <UncontrolledOnOffButton callBack={setOnOff}/> {String(onOff)}
+            <UncontrolledRating />
+            <UncontrolledOnOffButton callBack={setOnOff}/>
             <UncontrelledAccordion titleValue={'Menu'}/>
 
 
