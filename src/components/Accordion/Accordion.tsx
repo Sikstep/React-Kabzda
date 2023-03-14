@@ -5,19 +5,29 @@ type AccordionPropsType = {
 
     collapsed: boolean
     setAcc: (accordion: boolean) => void
+    items: string[]
 }
 
-function Accordion({titleValue, collapsed, setAcc}: AccordionPropsType) {
+function Accordion({titleValue, collapsed, setAcc, items}: AccordionPropsType) {
 
     return <div>
-        <AccordionTitle titleValue={titleValue} collapsed={collapsed} setAcc={setAcc}/>
-        { collapsed && <AccordionBody/> }
+        <AccordionTitle
+            titleValue={titleValue}
+            collapsed={collapsed}
+            setAcc={setAcc}/>
+        {collapsed && <AccordionBody item={items}/>}
     </div>
 }
 
-function AccordionTitle (props:AccordionPropsType) {
+type AccordionTitleType = {
+    titleValue: string
 
-    return <h3 onClick={(event) => props.setAcc(!props.collapsed) }>{props.titleValue}</h3>
+    collapsed: boolean
+    setAcc: (accordion: boolean) => void
+}
+function AccordionTitle(props: AccordionTitleType) {
+
+    return <h3 onClick={(event) => props.setAcc(!props.collapsed)}>{props.titleValue}</h3>
 }
 
 // type AccordionBodyPropsType = {
@@ -25,12 +35,17 @@ function AccordionTitle (props:AccordionPropsType) {
 //     collapsed: boolean
 // }
 
-function AccordionBody() {
+type AccordionBodyPropsType = {
+    item: string[]
+}
+function AccordionBody(props: AccordionBodyPropsType) {
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {props.item.map((el, index) => {
+                return (
+                    <li key={index}>{el}</li>
+                )
+            })}
         </ul>
     )
 }

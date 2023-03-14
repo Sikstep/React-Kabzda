@@ -35,7 +35,7 @@ const App = () => {
     return (
         <div className={classes.App}>
 
-            <Accordion titleValue={'--Users--'} collapsed={accordion} setAcc={setAccordion}/>
+            {/*<Accordion titleValue={'--Users--'} collapsed={accordion} setAcc={setAccordion}/>*/}
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating />
             <UncontrolledOnOffButton callBack={setOnOff}/>
