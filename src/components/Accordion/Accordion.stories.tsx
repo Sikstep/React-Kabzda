@@ -19,11 +19,13 @@ export const AccordionChanged = () => {
         titleValue={'Accordion Changer'}
         collapsed={acc}
         setAcc={setAcc}
-        items={[{title: 'Dimich', value: 1}, {title: 'Valera', value: 2}, {title: 'Nasty', value: 3}, {
-            title: 'Tany',
-            value: 4
-        }]}
-        onClick={onClickCallack}/>
+        items={[
+            {title: 'Dimich', value: 1},
+            {title: 'Valera', value: 2},
+            {title: 'Nasty', value: 3},
+            {title: 'Tany', value: 4}
+        ]}
+        onClick={(id) => { alert(`user with ID ${id} should be happy`) }}/>
 };
 
 

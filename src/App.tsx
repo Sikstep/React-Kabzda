@@ -6,6 +6,8 @@ import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 import Accordion from './components/Accordion/Accordion';
 import {UncontrolledOnOffButton} from './components/OnOff/UncontrolledOnOff';
 import {OnOffButton} from './components/OnOff/OnOff';
+import {Select} from './components/Select/Select';
+import {newItems} from './components/Select/Select.stories';
 
 
 const App = () => {
@@ -40,6 +42,7 @@ const App = () => {
             <UncontrolledRating />
             <UncontrolledOnOffButton callBack={setOnOff}/>
             <UncontrelledAccordion titleValue={'Menu'}/>
+            <Select value={1} items={newItems}/>
 
 
         </div>
