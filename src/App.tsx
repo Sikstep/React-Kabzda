@@ -42,7 +42,7 @@ const App = () => {
             <UncontrolledRating />
             <UncontrolledOnOffButton callBack={setOnOff}/>
             <UncontrelledAccordion titleValue={'Menu'}/>
-            <Select value={1} items={newItems}/>
+            {/*<Select value={1} items={newItems}/>*/}
 
 
         </div>

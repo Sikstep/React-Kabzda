@@ -1,4 +1,5 @@
 import React, {MouseEvent, useState} from 'react';
+import s from './Select.module.css'
 
 export type itemType = {
     title: string
@@ -28,8 +29,8 @@ export function Select(props: SelectPropsType) {
 
         <div>
             {collapse ?
-                props.items.map(el => (<div onClick={(e) => onClickMapHandler(e)}>{el.title}</div>)) :
-                <div onClick={onClickDivHandler}>{currentValue}</div>}
+                props.items.map(el => (<div className={s.selectlist} onClick={(e) => onClickMapHandler(e)}>{el.title}</div>)) :
+                <div className={s.select} onClick={onClickDivHandler}>{currentValue}</div>}
         </div>
     );
 };
