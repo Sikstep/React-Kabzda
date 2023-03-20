@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {itemType} from '../Select/Select';
 import s from './CustomSelectByDimich.module.css'
 
 
 type CustomSelectByDimichType = {
-    value?: number
-    onChange: (value: number) => void
+    value?: any
+    onChange: (value: any) => void
     items: itemType[]
 }
 const CustomSelectByDimich = (props: CustomSelectByDimichType) => {
-    const [active, setActive] = useState(true);
+
+    const [active, setActive] = useState(false);
     const selectedItem = props.items.find(i => i.value === props.value);
+    const toggleItem = () => setActive((active) => !active)
+    const itemCliched = (value: number) => {
+        props.onChange(value);
+    }
+
     return (
         <>
-            <select>
-                <option value="1">Minsk</option>
-                <option value="2">Moscow</option>
-                <option value="3">Kiev</option>
-            </select>
-            <div className={s.selectWrapper + ' ' + (active ? s.active : '')}>
-                <h3>{selectedItem && selectedItem.title}</h3>
-                <div className={s.items}>
-                    {props.items.map(el => <div key={el.value}>{el.title}</div>)}
-                </div>
+            <div className={s.select}>
+                <span className={s.main} onClick={toggleItem}>{selectedItem && selectedItem.title}</span>
+                {
+                    active &&
+                    <div className={s.items}>
+                        {props.items.map(el => <div
+                            key={el.value}
+                            onClick={() => itemCliched(el.value)}
+                        >
+                            {el.title}
+                        </div>)}
+                    </div>
+                }
             </div>
         </>
     );

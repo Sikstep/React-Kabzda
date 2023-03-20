@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {itemType} from '../Select/Select';
 import CustomSelectByDimich from './CustomSelectByDimich';
 import {action} from '@storybook/addon-actions';
@@ -9,6 +9,7 @@ export default {
     // component: Button,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 }
+
 
 const newItems: itemType[] = [
     {title: 'Minsk', value: 1},
@@ -22,5 +23,10 @@ const newItems: itemType[] = [
     {title: 'Vitebsk', value: 9},
 ]
 
-export const WithValue = () => <CustomSelectByDimich onChange={action('Value changed')} items={newItems} value={1}/>;
+export const WithValue = () => {
+    const [value, setValue] = useState(null);
+    return (
+        <CustomSelectByDimich onChange={setValue} items={newItems} value={value}/>
+    )
+}
 export const WithoutValue = () => <CustomSelectByDimich onChange={action('Value changed')} items={newItems}/>;
