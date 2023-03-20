@@ -1,4 +1,4 @@
-import React, {useState, KeyboardEvent} from 'react';
+import React, {useState, KeyboardEvent, useEffect} from 'react';
 import {itemType} from '../Select/Select';
 import s from './CustomSelectByDimich.module.css'
 
@@ -15,19 +15,37 @@ const CustomSelectByDimich = (props: CustomSelectByDimichType) => {
 
     const selectedItem = props.items.find(i => i.value === props.value);
     const hoveredItem = props.items.find(i => i.value === hoveredElementValue);
+
+    useEffect(() => {
+        setHoveredElementValue(props.value)
+    }, [props.value])
+
     const toggleItem = () => setActive((active) => !active)
     const itemCliched = (value: number) => {
         props.onChange(value);
         setActive((active) => !active)
     }
     const onKeyUphandler = (e: KeyboardEvent<HTMLDivElement>) => {
-        for (let i = 0; i < props.items.length; i++) {
-            if (props.items[i].value === hoveredElementValue) {
-                setHoveredElementValue(props.items[i + 1].value);
-                break
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            for (let i = 0; i < props.items.length; i++) {
+                if (props.items[i].value === hoveredElementValue) {
+                    const pretendentElement = e.key === 'ArrowDown' ?
+                        props.items[i + 1] :
+                        props.items[i - 1];
+                    if (pretendentElement) {
+                        props.onChange(pretendentElement.value)
+                        return;
+                    }
+
+                }
+            }
+            if (!selectedItem) {
+                props.onChange(props.items[0].value);
             }
         }
-
+        if (e.key === 'Enter' || e.key === 'Escape') {
+            setActive(!active);
+        }
     }
     return (
         <>
