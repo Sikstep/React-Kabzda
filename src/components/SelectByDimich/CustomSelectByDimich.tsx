@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, KeyboardEvent} from 'react';
 import {itemType} from '../Select/Select';
 import s from './CustomSelectByDimich.module.css'
 
@@ -20,20 +20,27 @@ const CustomSelectByDimich = (props: CustomSelectByDimichType) => {
         props.onChange(value);
         setActive((active) => !active)
     }
-    const onKeyPresshandler = (e: number) => {
-        console.log('pressed')
+    const onKeyUphandler = (e: KeyboardEvent<HTMLDivElement>) => {
+        for (let i = 0; i < props.items.length; i++) {
+            if (props.items[i].value === hoveredElementValue) {
+                setHoveredElementValue(props.items[i + 1].value);
+                break
+            }
+        }
+
     }
     return (
         <>
             <div
                 tabIndex={0}
-                className={s.select}>
+                className={s.select}
+                onKeyUp={onKeyUphandler}>
                 <span className={s.main} onClick={toggleItem}>{selectedItem && selectedItem.title}</span>
                 {
                     active &&
                     <div className={s.items}>
                         {props.items.map(el => <div
-                            onMouseEnter={()=>setHoveredElementValue(el.value)}
+                            onMouseEnter={() => setHoveredElementValue(el.value)}
                             className={s.item + ' ' + (hoveredItem === el ? s.selected : '')}
                             key={el.value}
                             onClick={() => itemCliched(el.value)}
