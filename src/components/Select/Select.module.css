@@ -4,10 +4,11 @@
     align-items: center;
     margin-top: 2px;
     height: 30px;
-    width: 50px;
+    width: 70px;
     border-radius: 5px;
     background-color: #0d74bb;
     color: #ffffff;
+    border: 1px solid #0d4e9b;
 }
 .selectlist:hover {
     background-color: #78d5c2;
@@ -18,10 +19,11 @@
     justify-content: center;
     align-items: center;
     height: 30px;
-    width: 50px;
+    width: 70px;
     border-radius: 5px;
     background-color: #0d74bb;
     color: #ffffff;
+    border: 1px solid #0d4e9b;
 }
 
 .selectlist_Container {
