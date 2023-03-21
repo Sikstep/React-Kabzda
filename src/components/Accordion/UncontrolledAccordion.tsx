@@ -18,9 +18,9 @@ const reducer = (state: boolean, action: ReducerType) => {
         case 'TOGGLE-COLLAPSED':
             return !state;
         default:
-            return state;
+            throw new Error('Bad action type')
     }
-
+    return state;
 }
 export const UncontrelledAccordion = (props: UncontrolledAccordionPropsType) => {
     console.log('Uncontrolled Accordion rendering')
