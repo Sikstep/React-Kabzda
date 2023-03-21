@@ -8,13 +8,14 @@ const ActionCreater = () => {
 type StateType = {
     collapsed: boolean
 }
-export const reducer = (state: StateType, action: ReducerType):StateType => {
+export const reducer = (state: StateType, action: ReducerType): StateType => {
 
     switch (action.type) {
         case 'TOGGLE-COLLAPSED':
-            const copyState = {...state}
-            copyState.collapsed = !copyState.collapsed;
-            return copyState;
+            return {
+                ...state,
+                collapsed: !state.collapsed
+            };
         default:
             throw new Error('Bad action type')
     }
