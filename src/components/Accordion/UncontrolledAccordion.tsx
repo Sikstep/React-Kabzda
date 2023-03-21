@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useReducer, useState} from 'react';
 
 type UncontrolledAccordionPropsType = {
     titleValue: string
@@ -6,13 +6,28 @@ type UncontrolledAccordionPropsType = {
     // collapsed: boolean
 }
 
-export const UncontrelledAccordion = (props: UncontrolledAccordionPropsType) => {
+type ReducerType = ReturnType<typeof ActionCreater>
+const ActionCreater = () => {
+    return {
+        type: 'TOGGLE-COLLAPSED'
+    }
+}
+const reducer = (state:boolean, action: ReducerType) => {
 
-    const [onAccordion, setOnAccordion] = useState(true);
+    if (action.type === 'TOGGLE-COLLAPSED') {
+        return !state;
+    }
+    return state;
+}
+export const UncontrelledAccordion = (props: UncontrolledAccordionPropsType) => {
+    console.log('Uncontrolled Accordion rendering')
+    // const [onAccordion, setOnAccordion] = useState(true);
+ const [collapsed, dispatch] = useReducer(reducer, false)
 
     return <div>
-        <UncontrolledAccordionTitle title={props.titleValue} setFunc={setOnAccordion} onAccord={onAccordion}/>
-        { onAccordion && <UncontrolledAccordionBody/> }
+        {/*<UncontrolledAccordionTitle title={props.titleValue} setFunc={setOnAccordion} onAccord={onAccordion}/>*/}
+        <UncontrolledAccordionTitle title={props.titleValue} setFunc={() => dispatch({type: 'TOGGLE-COLLAPSED'})} onAccord={collapsed}/>
+        { collapsed && <UncontrolledAccordionBody/> }
     </div>
 }
 

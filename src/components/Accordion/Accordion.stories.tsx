@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {action} from '@storybook/addon-actions';
 import Accordion from './Accordion';
+import {UncontrelledAccordion} from './UncontrolledAccordion';
 
 export default {
     title: 'Controlled Accordion',
@@ -27,5 +28,7 @@ export const AccordionChanged = () => {
         ]}
         onClick={(id) => { alert(`user with ID ${id} should be happy`) }}/>
 };
+
+export const UncontrolledAccordionMode = () => <UncontrelledAccordion titleValue={'Meny'}/>
 
 
