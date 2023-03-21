@@ -5,7 +5,7 @@ const ActionCreater = () => {
     }
 }
 
-type StateType = {
+export type StateType = {
     collapsed: boolean
 }
 export const reducer = (state: StateType, action: ReducerType): StateType => {
