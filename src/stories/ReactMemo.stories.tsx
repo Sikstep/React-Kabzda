@@ -25,9 +25,14 @@ export const Exapmle = () => {
     const [counter, setCounter] = useState(0);
     const [users, setUsers] = useState(['Dimych', 'Valera', 'Artem', 'Katya']);
 
+    const AddUser = () => {
+
+        setUsers([...users, 'Svetlana ' + new Date().getTime()])
+    }
+    
     return <>
         <button onClick={() => setCounter(previous => previous + 1)}>+</button>
-        <button onClick={()=> setUsers()}>add user</button>
+        <button onClick={AddUser}>add user</button>
         <NewMessagesCounter count={counter}/>
         <Users users={users}/>
 
