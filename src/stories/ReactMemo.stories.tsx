@@ -27,6 +27,7 @@ export const Exapmle = () => {
 
     return <>
         <button onClick={() => setCounter(previous => previous + 1)}>+</button>
+        <button onClick={()=> setUsers()}>add user</button>
         <NewMessagesCounter count={counter}/>
         <Users users={users}/>
 
