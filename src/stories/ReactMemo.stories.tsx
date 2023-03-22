@@ -23,7 +23,7 @@ const UsersSecret = (props: UsersType) => {
 const Users = React.memo(UsersSecret)
 export const Exapmle = () => {
     const [counter, setCounter] = useState(0);
-    const [users, setUsers] = useState(['Dimych', 'Valera', 'Artem']);
+    const [users, setUsers] = useState(['Dimych', 'Valera', 'Artem', 'Katya']);
 
     return <>
         <button onClick={() => setCounter(previous => previous + 1)}>+</button>
