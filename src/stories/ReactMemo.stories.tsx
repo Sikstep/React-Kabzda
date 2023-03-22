@@ -1,3 +1,4 @@
+import React from 'react'
 import {useState} from 'react'
 
 export default {
@@ -12,12 +13,14 @@ type MewMessagesCounterType = {
 const NewMessagesCounter = (props: MewMessagesCounterType) => {
     return <div>{props.count}</div>
 }
-const Users = (props: UsersType) => {
+const UsersSecret = (props: UsersType) => {
     console.log('USERS')
     return <div>
         {props.users.map((u, i) => <div key={i}>{u}</div>)}
     </div>
 }
+
+const Users = React.memo(UsersSecret)
 export const Exapmle = () => {
     const [counter, setCounter] = useState(0);
     const [users, setUsers] = useState(['Dimych', 'Valera', 'Artem']);
