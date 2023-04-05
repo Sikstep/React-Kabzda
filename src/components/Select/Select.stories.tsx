@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React from 'react';
 import {itemType, Select} from './Select';
 import {action} from '@storybook/addon-actions';
 
