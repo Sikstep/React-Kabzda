@@ -4,6 +4,8 @@ import s from './Select.module.css'
 export type itemType = {
     title: string
     value: number
+    country: string
+    population: number
 }
 
 export type SelectPropsType = {
@@ -18,7 +20,7 @@ export function Select(props: SelectPropsType) {
 
 
     const onClickMapHandler = (selectedValue: number) => {
-        setCurrentValue((oldItem)=> oldItem = selectedValue);
+        setCurrentValue((oldItem) => oldItem = selectedValue);
         if (props.onChange) {
             props.onChange()
         }
@@ -43,11 +45,13 @@ export function Select(props: SelectPropsType) {
             {collapse ?
                 props.items.map(el => (<div key={el.value}
                                             className={s.selectlist}
-                                            onClick={()=>onClickMapHandler(el.value)}>{el.title}</div>)) :
+                                            onClick={() => onClickMapHandler(el.value)}>{el.title}</div>)) :
                 <div className={s.select}
                      onClick={onClickDivHandler}
-                onKeyDown={(e)=>onKeyDawnHover(e)} >{props.items[currentValue - 1].title}</div>}
-            {/*<input onKeyDown={onKeyDawnHover}/>*/}
+                     onKeyDown={(e) => onKeyDawnHover(e)}
+                >{props.items[currentValue - 1].title}
+                </div>
+            }
         </div>
     );
 };
