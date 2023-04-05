@@ -45,7 +45,7 @@ export const DifficultCountingExample = () => {
 }
 
 
-const UsersSecret = (props: {users: string[]}) => {
+const UsersSecret = (props: { users: string[] }) => {
     console.log('USERS SECRET')
     return <div>
         {props.users.map((u, i) => <div key={i}>{u}</div>)}
@@ -53,15 +53,25 @@ const UsersSecret = (props: {users: string[]}) => {
 }
 
 const Users = React.memo(UsersSecret)
-export const Exapmle = () => {
+export const HelpsToReactMemo = () => {
+    console.log('HelpsToReactMemo')
     const [counter, setCounter] = useState(0);
     const [users, setUsers] = useState(['Dimych', 'Valera', 'Artem', 'Katya']);
 
+    const newArray = useMemo(() => {
+       return users.filter(el => el.toLowerCase().indexOf('a') > -1)
+    }, [users])
+
+    const AddUser = () => {
+
+        setUsers([...users, 'Svetlana ' + new Date().getTime()])
+    }
 
     return <>
         <button onClick={() => setCounter(previous => previous + 1)}>+</button>
         {counter}
-        <Users users={users}/>
+        <Users users={newArray}/>
+        <button onClick={AddUser}>Add user</button>
 
     </>
 }
