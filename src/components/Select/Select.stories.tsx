@@ -23,3 +23,8 @@ const newItems: itemType[] = [
 
 export const UncontrolledSelect = () => <Select value={1} items={newItems} onChange={action('Value changed')}/>;
 
+export const FilteredSelectByCountry = () => <Select value={1} items={newItems} onChange={action('Value changed')}/>;
+
+export const FilteredSelectByLetterA = () => <Select value={1} items={newItems} onChange={action('Value changed')}/>;
+
+export const FilteredSelectByGoverment = () => <Select value={1} items={newItems} onChange={action('Value changed')}/>;
