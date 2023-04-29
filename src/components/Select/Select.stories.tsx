@@ -1,6 +1,6 @@
 import React from 'react';
 import {itemType, Select} from './Select';
-import {action} from '@storybook/addon-actions';
+
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -21,5 +21,5 @@ const newItems: itemType[] = [
     {title: 'Vitebsk', value: 9, country: 'Belarus', population: 700000},
 ]
 
-export const UncontrolledSelect = () => <Select value={1} items={newItems} onChange={action('Value changed')}/>;
+export const UncontrolledSelect = () => <Select value={1} items={newItems} onChange={()=>{}}/>;
 

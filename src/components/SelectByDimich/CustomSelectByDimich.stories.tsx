@@ -10,8 +10,13 @@ export default {
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 }
 
+export type newItemsType = {
+    title: string
+    value: number
 
-const newItems: itemType[] = [
+}
+
+const newItems: newItemsType[] = [
     {title: 'Minsk', value: 1},
     {title: 'Moscow', value: 2},
     {title: 'Kiev', value: 3},

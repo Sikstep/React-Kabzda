@@ -1,12 +1,12 @@
-import React, {useState, KeyboardEvent, useEffect} from 'react';
-import {itemType} from '../Select/Select';
+import React, {KeyboardEvent, useEffect, useState} from 'react';
 import s from './CustomSelectByDimich.module.css'
+import {newItemsType} from './CustomSelectByDimich.stories';
 
 
 type CustomSelectByDimichType = {
     value?: any
     onChange: (value: any) => void
-    items: itemType[]
+    items: newItemsType[]
 }
 const CustomSelectByDimich = (props: CustomSelectByDimichType) => {
 
