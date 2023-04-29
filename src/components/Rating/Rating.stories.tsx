@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Rating, RatingValueType} from './Rating';
-import { actions } from '@storybook/addon-actions';
 
 export default {
   title: 'Rating Controling',

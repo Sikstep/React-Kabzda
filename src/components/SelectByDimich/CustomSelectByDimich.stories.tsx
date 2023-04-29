@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {itemType} from '../Select/Select';
 import CustomSelectByDimich from './CustomSelectByDimich';
 import {action} from '@storybook/addon-actions';
 
