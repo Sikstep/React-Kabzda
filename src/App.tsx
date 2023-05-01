@@ -1,8 +1,6 @@
 import React from 'react';
 import classes from './App.module.css';
-import {UseStateExample} from './components/useState/useState';
-import {UseEffectExample} from './components/useEffect/useEffect';
-import {SetTimeoutExample} from './components/useEffect/useEffectwithSetTimeout';
+import {Clock} from './components/useEffect/Clock';
 
 
 const App = () => {
@@ -40,7 +38,8 @@ const App = () => {
             {/*<Select value={1} items={newItems}/>*/}
             {/*<UseStateExample/>*/}
             {/*<UseEffectExample/>*/}
-            <SetTimeoutExample/>
+            {/*<SetTimeoutExample/>*/}
+            <Clock/>
 
         </div>
     );
