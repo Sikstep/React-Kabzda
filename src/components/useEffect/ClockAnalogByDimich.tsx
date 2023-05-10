@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import s from '../../App.module.css'
 
-export const Clock = () => {
+export const AnalogClock = () => {
     const initStateCount = () => new Date();
     const [fake, setFake] = useState(1);
     const [date, setDate] = useState(initStateCount);

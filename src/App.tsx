@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './App.module.css';
 import {Clock} from './components/useEffect/Clock';
+import {AnalogClock} from './components/useEffect/ClockAnalogByDimich';
 
 
 const App = () => {
@@ -39,7 +40,8 @@ const App = () => {
             {/*<UseStateExample/>*/}
             {/*<UseEffectExample/>*/}
             {/*<SetTimeoutExample/>*/}
-            <Clock/>
+            {/*<Clock/>*/}
+            <AnalogClock/>
 
         </div>
     );
