@@ -7,15 +7,22 @@ export const SetTimeoutExample = () => {
     console.log('SetTimeoutExample')
 
     useEffect(() => {
-        setInterval(() => {
+        const intervalID = setInterval(() => {
             setDate(new Date())
-        }, 1000)
+        }, 1000);
+        return () => clearInterval(intervalID);
     }, [])
 
 
     return (
         <div>
-            Hello, clock: {Intl.DateTimeFormat('ru', {hour: 'numeric', minute: 'numeric', second: 'numeric'}).format(date)}
+            <button>ChangeClockMode</button>
+            <div>Modern Mode</div>
+            <div>Hello, clock: {Intl.DateTimeFormat('ru', {
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            }).format(date)}</div>
             {/*<button onClick={() => setFake(fake + 1)}>fake+</button>*/}
             {/*<button onClick={() => setCounter(counter + 1)}>counter+</button>*/}
         </div>
