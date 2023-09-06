@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-export const UseEffect2 = () => {
+export const ResetEffectExample = () => {
+
+    const [counter, setCounter] = useState(1);
+
+    console.log('setTimeoutExample')
+
+    useEffect(()=>{
+
+    },[])
+
     return (
         <div>
-
+                hello, counter: {counter}
         </div>
     );
 };
