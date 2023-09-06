@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './App.module.css';
-import {AnalogClock} from './components/useEffect/ClockAnalogByDimich';
 import {ResetEffectExample} from './components/useEffect/UseEffect2';
 
 

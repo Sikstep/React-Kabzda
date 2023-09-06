@@ -7,12 +7,16 @@ export const ResetEffectExample = () => {
     console.log('setTimeoutExample')
 
     useEffect(()=>{
-
+        console.log('Effect occurred')
     },[])
+
+    const onClickHandler = () => {
+        setCounter(prev => prev + 1)
+    }
 
     return (
         <div>
-                hello, counter: {counter}
+                hello, counter: {counter} <button onClick={onClickHandler}>Inc</button>
         </div>
     );
 };
