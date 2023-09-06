@@ -4,11 +4,11 @@ export const ResetEffectExample = () => {
 
     const [counter, setCounter] = useState(1);
 
-    console.log('setTimeoutExample')
+    console.log('Component rendered')
 
     useEffect(()=>{
         console.log('Effect occurred')
-    },[])
+    })
 
     const onClickHandler = () => {
         setCounter(prev => prev + 1)
