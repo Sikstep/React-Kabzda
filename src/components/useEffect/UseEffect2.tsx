@@ -4,15 +4,15 @@ export const ResetEffectExample = () => {
 
     const [counter, setCounter] = useState(1);
 
-    console.log('Component rendered')
+    console.log('Component rendered with counter')
 
     useEffect(()=>{
-        console.log('Effect occurred')
+        console.log('Effect occurred ' + counter)
 
         return () => {
-            console.log('RESET EFFECT')
+            console.log('RESET EFFECT ' + counter)
         }
-    }, [])
+    }, [counter])
 
     const onClickHandler = () => {
         setCounter(prev => prev + 1)
