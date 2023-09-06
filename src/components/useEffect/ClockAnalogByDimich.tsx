@@ -3,7 +3,7 @@ import s from '../../App.module.css'
 
 export const AnalogClock = () => {
     const initStateCount = () => new Date();
-    const [fake, setFake] = useState(1);
+    const [mode, setMode] = useState<boolean>(true);
     const [date, setDate] = useState(initStateCount);
     console.log('SetTimeoutExample')
 
