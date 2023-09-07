@@ -37,12 +37,13 @@ export const SetTimeoutExampleWithUseEffect = () => {
        //  }
        // window.document.addEventListener('keypress', handler)
 
-        setTimeout(() => {
+        const timeoutID = setTimeout(() => {
             console.log('timeout expired')
             setText('3 seconds passed')
         }, 3000)
         
         return () => {
+            clearTimeout(timeoutID)
            // window.document.removeEventListener('keypress', handler)
         }
 
