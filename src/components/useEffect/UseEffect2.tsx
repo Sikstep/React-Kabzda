@@ -25,18 +25,27 @@ export const ResetEffectExample = () => {
     );
 };
 
-export const KeysTrackerExample = () => {
+export const SetTimeoutExampleWithUseEffect = () => {
     const [text, setText] = useState('');
 
     console.log('Component rendered with ' + text)
 
     useEffect(()=>{
-       window.document.addEventListener('keypress', (e) => {
-           console.log(e.code);
-           setText(text + e.code)
-       })
+       //  const handler = (e:KeyboardEvent) => {
+       //      console.log(e.key)
+       //      setText( text + e.key)
+       //  }
+       // window.document.addEventListener('keypress', handler)
 
-    }, [])
+        setTimeout(() => {
+            setText('3 seconds passed')
+        }, 3000)
+        
+        return () => {
+           // window.document.removeEventListener('keypress', handler)
+        }
+
+    }, [text])
 
     return <>
         Typed text: {text}

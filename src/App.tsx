@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './App.module.css';
-import {ResetEffectExample} from './components/useEffect/UseEffect2';
+import {SetTimeoutExampleWithUseEffect} from './components/useEffect/UseEffect2';
 
 
 const App = () => {
@@ -41,8 +41,8 @@ const App = () => {
             {/*<SetTimeoutExample/>*/}
             {/*<Clock/>*/}
             {/*<AnalogClock/>*/}
-            <ResetEffectExample/>
-
+            {/*<ResetEffectExample/>*/}
+            <SetTimeoutExampleWithUseEffect/>
 
         </div>
     );
